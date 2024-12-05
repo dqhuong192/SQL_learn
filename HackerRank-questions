@@ -1,0 +1,11 @@
+/*
+    total earn = salary x months
+    max earn of each = earning of the highest employee
+    find: max, # of employee that have that max -> print 2 space-separated integers
+*/
+
+SELECT 
+    MAX(salary * months),
+    COUNT(*)
+FROM EMPLOYEE
+WHERE salary * months = (SELECT MAX(salary * months) FROM EMPLOYEE);
